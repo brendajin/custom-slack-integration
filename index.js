@@ -1,10 +1,12 @@
-var	express = 	require('express'),
+const	express = 	require('express'),
 	app =		express(),
-	port = 		process.env.PORT || 8080;
+	port = 		process.env.PORT || 8080,
+	slack = 	require('./slack.js');
 
 
 app.post('/', function(req, res){
-	//  todo: add logic here
+	slack.sendMessage(req);
+	res.sendStatus(200);
 });
 
 app.get('/', function(req, res){
