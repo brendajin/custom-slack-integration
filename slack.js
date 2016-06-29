@@ -1,9 +1,6 @@
 const webhook = process.env.hook;
-const message = {
-    text: 'word'
-};
 const requestify = require('requestify');
 
-exports.sendMessage = function(req){
+exports.sendMessage = function(message){
 	requestify.post(webhook, message);
 };
