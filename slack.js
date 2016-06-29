@@ -1,6 +1,6 @@
 const webhook = process.env.hook;
 const message = {
-    text: 'word'
+    text: 'hello SF HTML 5'
 };
 const requestify = require('requestify');
 
