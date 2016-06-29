@@ -14,18 +14,7 @@ app.post('/', function(req, res){
 	}
 	if (req.get('X-GitHub-Event') == 'fork'){
 		slack.sendMessage({
-			'title': 'forked!',
 			'text': '<' + req.body.sender.url + '|' + req.body.sender.login + '> forked <' + req.body.repository.url + '|' + req.body.repository.name + '>',
-			'attachments': [
-				{
-					'text': ':checkered_flag: *open issues:* ' + req.body.repository.open_issues,
-					'color': '#439FE0'
-				},
-				{
-					'text': ':fork_and_knife: *forks:* ' + req.body.repository.forks,
-					'color': '#2B8100'
-				}
-			]
 		});
 	}
 	res.sendStatus(200);
